@@ -1,0 +1,123 @@
+
+### **Prompt: Generate a Realistic Airline Booking Dataset with Individual Customer Histories, Economic Trends, and Major Global Events (2014-2025)**  
+
+"Generate a synthetic **airline booking dataset** with **1,000 unique passengers** over **10 years (2014-2025)**. The dataset should incorporate **real-world economic conditions, business cycles, geopolitical events, global holidays, and major events** that influence airline ticket pricing and travel demand. Each passenger should have a unique **PassengerID** and multiple records reflecting their booking history.  
+
+### **1. Passenger and Booking Data:**
+- **Total Records:** **11,740 flight bookings**, distributed among **1,000 unique passengers**.
+- **Flight Capacity:** Each flight has **200 seats**, consisting of:  
+  - **Business Travelers:** 60 per flight (frequent flyers, high ancillary spending).  
+  - **Leisure Travelers:** 140 per flight (seasonal, varied purchasing behavior).  
+- **Unique Identifiers:**  
+  - `PassengerID`: A unique identifier for each passenger.  
+  - `Customer_History_ID`: A unique ID linking multiple bookings to the same passenger.  
+
+here you need to consider this too 
+
+Type of traveller	Membership	# of passengers	# of trips per year per person	total # of records per person for 10 years	# of records	Seat	Baggage	Priority Boarding	WiFi	Lounge	Meals	Insurance	Carbon Offset
+Business	No status	12	3	30	360	216	108	180	252	216	144	54	25.2
+Business	Silver	24	8	80	1920	960	384	768	1152	576	768	576	96
+Business	Gold	15	15	150	2250	1350	225	225	1575	112.5	675	562.5	180
+Business	Platinum	9	21	210	1890	1323	56.7	37.8	1512	94.5	378	283.5	189
+													
+													
+Leisure	No status	70	2	20	1400	420	910	280	280	140	770	140	14
+Leisure	Silver	49	4	40	1960	980	392	784	1176	588	784	588	98
+Leisure	Gold	14	8	80	1120	672	112	112	784	56	336	280	89.6
+Leisure	Platinum	7	12	120	840	588	25.2	16.8	672	42	168	126	84
+					11740								
+
+### **2. External Factors Affecting Prices & Demand:**
+
+#### **Economic & Business Cycles:**  
+- **Inflation & Recession:** Fluctuations affecting airfare affordability.  
+- **Oil Price Variations:** Impact on fuel surcharges and ticket prices.  
+- **GDP Growth Rates:** Correlation with corporate and leisure travel demand.  
+- **Stock Market Trends:** Influence on corporate travel frequency.  
+
+#### **Geopolitical Events & Conflicts:**  
+- **2014:** **Ukrainian Crisis, ISIS conflict** (European & Middle Eastern travel impact).  
+- **2020-2021:** **COVID-19 Pandemic** (travel decline and recovery).  
+- **2022:** **Russia-Ukraine Conflict** (airspace disruptions and travel shifts).  
+
+#### **Holidays & Seasonal Demand:**  
+- **Peak Travel Periods:** Summer (June-August), Winter Holidays (December-January), Spring Break (March-April).  
+- **Regional Holidays:** Lunar New Year (Asia), Thanksgiving (US), Eid (Middle East), Diwali (India).  
+
+#### **Major Global Events Impacting Travel:**  
+- **2014:** **Sochi Winter Olympics, FIFA World Cup (Brazil)**  
+- **2016:** **Rio Olympics (Brazil)**  
+- **2018:** **FIFA World Cup (Russia)**  
+- **2020:** **Tokyo Olympics (Postponed to 2021)**  
+- **2022:** **FIFA World Cup (Qatar)**  
+- **2024:** **Paris Olympics (France)**  
+
+### **3. Pricing & Ancillary Services:**  
+Each ancillary product should have **individual pricing**, adjusted based on demand, peak seasons, and major events.  
+
+| **Ancillary Product**  | **Price Range ($)** |
+|------------------------|---------------------|
+| **WiFi**              | 10 - 30             |
+| **Lounge Access**     | 25 - 50             |
+| **Meals**            | 15 - 40             |
+| **Insurance**        | 10 - 25             |
+| **Priority Boarding** | 5 - 20              |
+| **Carbon Offset**     | 3 - 15              |
+
+- **Dynamic Pricing:**  
+  - Prices increase during peak seasons and major global events.  
+  - Business travelers have a higher chance of purchasing premium services (WiFi, Lounge Access, Priority Boarding).  
+  - Leisure travelers are more likely to buy Meals and Insurance.  
+
+### **4. Data Output Format:**  
+The dataset should include the following **columns**:  
+
+- `PassengerID` (**Unique ID per traveler**)  
+- `Customer_History_ID` (**Groups multiple bookings of the same traveler**)  
+- `Ticket_Booking_Date`  
+- `Flight_Date`  
+- `Days_Before_Travel` (Number of days between booking and flight)  
+- `Traveler_Type` (Business/Leisure)  
+- `Travel_Class` (Business/Economy)  
+- `Peak_Season` (Yes/No)  
+- `Major_Event_Impact` (Yes/No - Indicates if booking is influenced by a major event)  
+- `Booking_within_48hrs` (Yes/No)  
+- `Base_Ticket_Price` (Dynamically adjusted based on events, economy, and demand)  
+
+i need Membership status and locations in table
+
+#### **Ancillary Product Purchases & Prices:**  
+- `WiFi_Purchased` (Yes/No) and `WiFi_Price`  
+- `Lounge_Access_Purchased` (Yes/No) and `Lounge_Price`  
+- `Meals_Purchased` (Yes/No) and `Meals_Price`  
+- `Insurance_Purchased` (Yes/No) and `Insurance_Price`  
+- `Priority_Boarding_Purchased` (Yes/No) and `Priority_Boarding_Price`  
+- `Carbon_Offset_Purchased` (Yes/No) and `Carbon_Offset_Price`  
+- `Total_Ancillary_Cost` (Sum of purchased services)  
+- `Final_Ticket_Price` (Base Ticket Price + Total Ancillary Cost)  
+
+### **5. Business Rules & Constraints:**  
+- **Ensure consistent traveler distribution** (60 Business, 140 Leisure per flight).  
+- **Dynamic pricing** should adjust for **economic trends, geopolitical events, peak seasons, and major events**.  
+- **Booking behavior should reflect real-world trends:**  
+  - **Business Travelers** book closer to the flight date.  
+  - **Leisure Travelers** book well in advance.  
+
+Ensure the dataset accurately represents **real-world travel patterns, economic shifts, major global events, and customer behaviors** in airline booking and pricing. The data should be structured for **training machine learning models** and **reinforcement learning simulations**."  
+
+---
+
+
+can you add these priceing and location From,To,"Economy (off season, early booking)","Economy (peak season, late booking)","Business (off season, early booking)","Business (peak season, late booking)",Seat,Baggage,Priority boarding,WiFi,Lounge,Meals,Insurance
+london,paris,70,120,300,500,8 to 33,15 to 120,7,8 to 24,30-40,11,23
+berlin,amsterdam,80,150,350,550,,,,,,,
+Madrid,barcelona,50,100,250,400,,,,,,,
+rome,london,90,160,400,600,,,,,,,
+Vienna,prague,60,110,280,450,,,,,,,
+frankfurt,madrid,100,180,400,650,,,,,,,
+paris,rome,90,170,380,600,,,,,,,
+amsterdam,zurich,80,160,350,550,,,,,,,
+london,berlin,70,150,320,500,,,,,,,
+munich,vienna,60,140,300,480,,,,,,,
+
+
